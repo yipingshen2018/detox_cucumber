@@ -1,0 +1,47 @@
+Feature: Elements can be matched dymamincally  and navation elements can be located
+
+@advancedmatchers @dynamic
+
+Scenario: Home section can be matched dynamically
+Given I tap on the "<Section>" section
+
+Examples:
+    | section | 
+    | Counters|
+      | Members|
+      | Cities|
+      | Animation|
+
+
+Scenario: I can match elements in navigation headers
+Given I tap on the 'member' section
+Then I tap the add Member Icon
+
+@advancedmatchers @navigtionbar
+
+Scenario: I can locate elements in navigation tabs
+Given I tap on the Cities navigation tab
+Then I tap the add City Icon
+
+
+@advancedmatchers @natigationtab
+Scenario: I can locate elements in navigation tabs
+Given I tap on the "<section>" navigation tab
+Then I tap on the "<sections_2>" navigation tab
+
+
+Examples:
+    | section | sections_2 |
+    | Cities  | Members    |
+    | Members | Cities     |
+    | Home| Members    |
+    | Members | Home     |
+    | Home| Cities    |
+    | Cities | Home     |
+    
+ 
+
+
+
+
+
